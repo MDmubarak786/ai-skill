@@ -1,0 +1,12 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vanguard-ui",
+  "version": "1.0.0",
+  "description": "Anti-AI-slop Frontend & SaaS UI Engineering skill with 25+ deterministic rules, automated verification hooks, and design token extraction",
+  "author": {
+    "name": "Vanguard UI Contributors"
+  },
+  "skills": ["skills/vanguard-ui"],
+  "keywords": ["ui", "frontend", "design-system", "audit", "anti-slop"],
+  "license": "MIT"
+}

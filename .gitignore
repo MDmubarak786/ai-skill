@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment and Local Config
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and runtime caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+.cache/
+.tmp/
+dist/
+coverage/
+
+# OS metadata
+.Spotlight-V100
+.Trashes

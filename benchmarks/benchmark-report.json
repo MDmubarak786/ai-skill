@@ -1,0 +1,302 @@
+[
+  {
+    "key": "raw-ai",
+    "title": "Scenario A: Raw AI Output (Without Skill)",
+    "description": "Default LLM generation for a SaaS subscription card",
+    "file": "/Users/mubarak/Downloads/personal/skill/benchmarks/scenario-raw-ai.tsx",
+    "score": 35,
+    "grade": "F",
+    "violationsTotal": 18,
+    "criticalCount": 5,
+    "warningCount": 12,
+    "infoCount": 1,
+    "byCategory": {
+      "color": 4,
+      "typography": 3,
+      "layout": 5,
+      "motion": 4,
+      "state": 1,
+      "accessibility": 1
+    },
+    "violations": [
+      {
+        "id": "COL-001",
+        "name": "AI purple/indigo gradient pattern",
+        "severity": "critical",
+        "lines": [
+          14
+        ]
+      },
+      {
+        "id": "COL-002",
+        "name": "Hardcoded hex in Tailwind arbitrary value",
+        "severity": "critical",
+        "lines": [
+          12,
+          28,
+          34,
+          40,
+          57,
+          72
+        ]
+      },
+      {
+        "id": "COL-004",
+        "name": "Known AI-slop hex value",
+        "severity": "critical",
+        "lines": [
+          28,
+          34,
+          40,
+          57,
+          72
+        ]
+      },
+      {
+        "id": "LAY-001",
+        "name": "Cards-inside-cards",
+        "severity": "critical",
+        "lines": [
+          22,
+          53
+        ]
+      },
+      {
+        "id": "MOT-001",
+        "name": "transition-all on UI element",
+        "severity": "critical",
+        "lines": [
+          53,
+          69,
+          72
+        ]
+      },
+      {
+        "id": "ACC-002",
+        "name": "hover: without focus-visible:",
+        "severity": "warning",
+        "lines": [
+          53,
+          72
+        ]
+      },
+      {
+        "id": "COL-003",
+        "name": "Pure black-on-white / white-on-black",
+        "severity": "warning",
+        "lines": [
+          12
+        ]
+      },
+      {
+        "id": "LAY-003",
+        "name": "Flex/grid text child missing min-w-0",
+        "severity": "warning",
+        "lines": [
+          26,
+          27,
+          28,
+          33,
+          34,
+          39,
+          40,
+          55
+        ]
+      },
+      {
+        "id": "LAY-004",
+        "name": "100vh without 100dvh fallback",
+        "severity": "warning",
+        "lines": [
+          12
+        ]
+      },
+      {
+        "id": "LAY-005",
+        "name": "Fixed-width without responsive variant",
+        "severity": "warning",
+        "lines": [
+          12
+        ]
+      },
+      {
+        "id": "LAY-006",
+        "name": "Excessive nesting depth",
+        "severity": "warning",
+        "lines": [
+          28,
+          34,
+          40
+        ]
+      },
+      {
+        "id": "MOT-002",
+        "name": "ease-in on entering element",
+        "severity": "warning",
+        "lines": [
+          53
+        ]
+      },
+      {
+        "id": "MOT-003",
+        "name": "Slow duration on interactive control",
+        "severity": "warning",
+        "lines": [
+          53,
+          69,
+          72
+        ]
+      },
+      {
+        "id": "MOT-004",
+        "name": "Missing prefers-reduced-motion",
+        "severity": "warning",
+        "lines": [
+          53,
+          69,
+          72
+        ]
+      },
+      {
+        "id": "STA-001",
+        "name": ".map() without empty-array fallback",
+        "severity": "warning",
+        "lines": [
+          49
+        ]
+      },
+      {
+        "id": "TYP-001",
+        "name": "Unconfigured default font-sans",
+        "severity": "warning",
+        "lines": [
+          12
+        ]
+      },
+      {
+        "id": "TYP-003",
+        "name": "Large heading missing tracking-tight",
+        "severity": "warning",
+        "lines": [
+          15
+        ]
+      },
+      {
+        "id": "TYP-004",
+        "name": "Long heading missing text-balance",
+        "severity": "info",
+        "lines": [
+          15,
+          23
+        ]
+      }
+    ]
+  },
+  {
+    "key": "generic-skill",
+    "title": "Scenario B: Generic Community Skill",
+    "description": "Standard Markdown-advice prompt without verification hooks",
+    "file": "/Users/mubarak/Downloads/personal/skill/benchmarks/scenario-generic-skill.tsx",
+    "score": 79,
+    "grade": "B",
+    "violationsTotal": 7,
+    "criticalCount": 1,
+    "warningCount": 5,
+    "infoCount": 1,
+    "byCategory": {
+      "color": 0,
+      "typography": 2,
+      "layout": 1,
+      "motion": 2,
+      "state": 1,
+      "accessibility": 1
+    },
+    "violations": [
+      {
+        "id": "MOT-001",
+        "name": "transition-all on UI element",
+        "severity": "critical",
+        "lines": [
+          30,
+          31,
+          56
+        ]
+      },
+      {
+        "id": "ACC-002",
+        "name": "hover: without focus-visible:",
+        "severity": "warning",
+        "lines": [
+          31,
+          56
+        ]
+      },
+      {
+        "id": "LAY-003",
+        "name": "Flex/grid text child missing min-w-0",
+        "severity": "warning",
+        "lines": [
+          36,
+          51
+        ]
+      },
+      {
+        "id": "MOT-003",
+        "name": "Slow duration on interactive control",
+        "severity": "warning",
+        "lines": [
+          30,
+          31,
+          50,
+          56
+        ]
+      },
+      {
+        "id": "STA-001",
+        "name": ".map() without empty-array fallback",
+        "severity": "warning",
+        "lines": [
+          24,
+          25
+        ]
+      },
+      {
+        "id": "TYP-001",
+        "name": "Unconfigured default font-sans",
+        "severity": "warning",
+        "lines": [
+          14
+        ]
+      },
+      {
+        "id": "TYP-004",
+        "name": "Long heading missing text-balance",
+        "severity": "info",
+        "lines": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "key": "vanguard-ui",
+    "title": "Scenario C: Vanguard UI Skill",
+    "description": "4-Gate Workflow with OKLCH tokens, 5 states & auto-heal",
+    "file": "/Users/mubarak/Downloads/personal/skill/benchmarks/scenario-vanguard-ui.tsx",
+    "score": 100,
+    "grade": "S",
+    "violationsTotal": 0,
+    "criticalCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "byCategory": {
+      "color": 0,
+      "typography": 0,
+      "layout": 0,
+      "motion": 0,
+      "state": 0,
+      "accessibility": 0
+    },
+    "violations": []
+  }
+]

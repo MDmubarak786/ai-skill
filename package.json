@@ -1,0 +1,42 @@
+{
+  "name": "vanguard-ui",
+  "version": "1.0.0",
+  "description": "The definitive anti-AI-slop Frontend & SaaS UI Engineering skill for AI coding agents. Combines progressive-disclosure instructions with zero-dependency Node.js automation, automatic post-edit verification, SaaS 5-state enforcement, and live URL token extraction.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "vanguard-ui": "./bin/cli.mjs"
+  },
+  "scripts": {
+    "test": "node --test tests/audit.test.mjs"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    ".claude-plugin/",
+    "README.md"
+  ],
+  "keywords": [
+    "ai-skills",
+    "claude-code",
+    "antigravity",
+    "cursor",
+    "codex",
+    "skills-sh",
+    "ui-engineering",
+    "anti-slop",
+    "design-system",
+    "frontend",
+    "audit",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vanguard-ui/vanguard-ui"
+  },
+  "author": "Vanguard UI Contributors",
+  "homepage": "https://github.com/vanguard-ui/vanguard-ui#readme"
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniVector — AI Vector Database (with Impeccable)</title>
+  <style>
+    /* Impeccable Stitch format: cleaner slate palette, but lacks motion physics and tabular digits */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.25rem; font-weight: 700; color: #0f172a; }
+
+    /* Hero section */
+    .hero {
+      max-width: 1040px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #0f172a;
+      background: #e2e8f0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+    /* Missing text-balance and tracking-tight */
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #0f172a;
+      margin-bottom: 1.25rem;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #64748b;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Semantic buttons, but using transition: all and duration-300 without motion-reduce */
+    .btn-primary {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 0.85rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #334155;
+    }
+
+    /* Metrics: missing tabular-nums */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1040px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .metric-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+    }
+    .metric-label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #64748b; }
+    .metric-value { font-size: 1.75rem; font-weight: 700; color: #0f172a; margin-top: 0.25rem; }
+
+    /* Features */
+    .features {
+      max-width: 1040px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feat-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .feat-card:hover {
+      border-color: #cbd5e1;
+    }
+    .feat-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feat-desc { font-size: 0.9rem; color: #64748b; }
+
+    /* Nested Card Pattern (Outer card containing inner cards) */
+    .pricing-outer {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 2.5rem;
+      max-width: 800px;
+      margin: 4rem auto;
+    }
+    .pricing-inner {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #64748b;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">⚡ OmniVector</div>
+    <a href="#deploy" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Start Free</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">STITCH DESIGN SPECIFICATION</div>
+      <h1 class="hero-title">Autonomous Vector Search Engine</h1>
+      <p class="hero-desc">
+        Store, partition, and query embeddings at billion-vector scale with predictable sub-millisecond retrieval.
+      </p>
+      <a href="#deploy" class="btn-primary">Create Vector Database</a>
+    </section>
+
+    <!-- Metrics Strip (Lacks Tabular Nums) -->
+    <section class="metrics-bar">
+      <div class="metric-card">
+        <span class="metric-label">Max QPS</span>
+        <div class="metric-value">140,290</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">P99 Latency</span>
+        <div class="metric-value">2.4 ms</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Dimensionality</span>
+        <div class="metric-value">1,536 dims</div>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">SLA Uptime</span>
+        <div class="metric-value">99.99%</div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <h2 style="font-size: 1.75rem; font-weight: 700;">Engineered Architecture</h2>
+      <div class="features-grid">
+        <div class="feat-card">
+          <h3 class="feat-title">Real-Time Indexing</h3>
+          <p class="feat-desc">Dynamic HNSW graph mutations with zero re-indexing lockups or write latency spikes.</p>
+        </div>
+        <div class="feat-card">
+          <h3 class="feat-title">Zero-Copy Partitioning</h3>
+          <p class="feat-desc">Tenant-level encryption keys and memory-mapped disk paging for multi-agent workloads.</p>
+        </div>
+        <div class="feat-card">
+          <h3 class="feat-title">Hybrid BM25 + Vector</h3>
+          <p class="feat-desc">Fuses dense vector semantic similarity with reciprocal rank sparse text keywords.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nested Card Container Anti-pattern -->
+    <section class="features">
+      <div class="pricing-outer">
+        <h2 style="font-size: 1.5rem; font-weight: 700;">Cluster Sizing</h2>
+        <p style="color: #64748b; font-size: 0.9rem; margin-top: 0.25rem;">Dedicated vector inference partitions.</p>
+
+        <div class="pricing-inner">
+          <div>
+            <h4 style="font-weight: 600;">Developer Cluster</h4>
+            <p style="font-size: 0.85rem; color: #64748b;">500,000 vectors with shared CPU.</p>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 700;">$0/mo</div>
+        </div>
+
+        <div class="pricing-inner">
+          <div>
+            <h4 style="font-weight: 600;">Dedicated Cluster</h4>
+            <p style="font-size: 0.85rem; color: #64748b;">Multi-region cluster with dedicated NVMe nodes.</p>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: 700;">$499/mo</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 OmniVector Database Inc. Generated with Impeccable guidelines.</p>
+  </footer>
+
+</body>
+</html>

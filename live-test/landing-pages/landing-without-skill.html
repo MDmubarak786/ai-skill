@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniVector — AI Vector Database (Without Skill)</title>
+  <style>
+    /* Raw AI styles: hardcoded hex, font-sans without tokens, 100vh */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+      min-height: 100vh;
+    }
+
+    /* AI Signature Purple Gradient Hero */
+    .hero-section {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      padding: 5rem 2rem;
+      text-align: center;
+      color: #ffffff;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      color: #e0e7ff;
+    }
+
+    /* Cliché div onclick button with transition-all and duration 500ms ease-in */
+    .cta-button {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #6366f1;
+      padding: 1rem 2.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s ease-in;
+    }
+    .cta-button:hover {
+      background-color: #f5f3ff;
+      transform: translateY(-2px);
+    }
+
+    /* Stats strip without tabular-nums */
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 3rem 1rem;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #1e293b;
+    }
+    .stat-label { font-size: 0.85rem; color: #64748b; }
+
+    /* Features Grid: Cliché icon-tile above heading in 3 repeated cards */
+    .features-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.25rem;
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.5s ease-in;
+    }
+    .feature-card:hover {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .icon-tile {
+      width: 48px;
+      height: 48px;
+      border-radius: 0.75rem;
+      background-color: #8b5cf6;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .feature-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .feature-desc { color: #64748b; font-size: 0.95rem; line-height: 1.5; }
+
+    /* Cards Inside Cards Cliché: Outer Card holding nested inner cards */
+    .pricing-card-outer {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 1rem;
+      padding: 2.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 4rem auto;
+    }
+    .pricing-card-inner {
+      background: #fdf4ff;
+      border: 1px solid #f0abfc;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+    <div style="font-size: 1.25rem; font-weight: 800; color: #8b5cf6;">⚡ OmniVector</div>
+    <div class="cta-button" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;" onclick="alert('Started')">
+      Get Started
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-badge">AI VECTOR SEARCH ENGINE V2.0</div>
+    <h1 class="hero-title">Next-Gen Vector Database for AI Agents</h1>
+    <p class="hero-subtitle">
+      Store, index, and query billion-scale high-dimensional embeddings with sub-millisecond p99 latency.
+    </p>
+    <div class="cta-button" onclick="alert('Deploying')">
+      Deploy Free Cluster
+    </div>
+  </section>
+
+  <!-- Telemetry Metrics without Tabular Numbers -->
+  <section class="stats-container">
+    <div class="stat-item">
+      <div class="stat-number">140,290</div>
+      <div class="stat-label">Queries / Second</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2.4 ms</div>
+      <div class="stat-label">P99 Search Latency</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1,536</div>
+      <div class="stat-label">Embedding Dimensions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">99.99%</div>
+      <div class="stat-label">Production SLA</div>
+    </div>
+  </section>
+
+  <!-- Features Grid: Cliché Repeated Icon Tiles -->
+  <section class="features-section">
+    <h2 class="section-title">Engineered for Autonomous Reasoning</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon-tile">⚡</div>
+        <h3 class="feature-title">Real-Time Indexing</h3>
+        <p class="feature-desc">Dynamic HNSW graph mutations with zero re-indexing lockups or write latency spikes.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-tile">🔒</div>
+        <h3 class="feature-title">Zero-Copy Partitioning</h3>
+        <p class="feature-desc">Tenant-level encryption keys and memory-mapped disk paging for multi-agent workloads.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="icon-tile">🚀</div>
+        <h3 class="feature-title">Hybrid BM25 + Vector</h3>
+        <p class="feature-desc">Fuses dense vector semantic similarity with reciprocal rank sparse text keywords.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards inside Cards Anti-pattern -->
+  <section class="features-section">
+    <div class="pricing-card-outer">
+      <h2>Scale Plan Tiers</h2>
+      <p style="color: #64748b; margin-top: 0.5rem;">Select your dedicated inference memory allocation.</p>
+
+      <!-- Nested Card 1 -->
+      <div class="pricing-card-inner">
+        <div>
+          <h4>Developer Sandbox</h4>
+          <p style="font-size: 0.85rem; color: #64748b;">Up to 500,000 vectors with shared CPU.</p>
+        </div>
+        <div style="font-size: 1.25rem; font-weight: 800;">$0 / month</div>
+      </div>
+
+      <!-- Nested Card 2 -->
+      <div class="pricing-card-inner">
+        <div>
+          <h4>Enterprise Dedicated</h4>
+          <p style="font-size: 0.85rem; color: #64748b;">Unlimited dimensional vectors with NVMe tiering.</p>
+        </div>
+        <div style="font-size: 1.25rem; font-weight: 800;">$499 / month</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 OmniVector Database Inc. Generated without UI Engineering skill.</p>
+  </footer>
+
+</body>
+</html>

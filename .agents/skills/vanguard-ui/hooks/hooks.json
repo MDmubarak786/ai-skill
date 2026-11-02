@@ -1,0 +1,16 @@
+{
+  "vanguard-slop-guard": {
+    "PostToolUse": [
+      {
+        "matcher": "write_file|edit_file|create_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node skills/vanguard-ui/hooks/post-write-hook.mjs",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

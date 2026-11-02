@@ -1,0 +1,442 @@
+{
+  "timestamp": "2026-11-01T16:16:39.411Z",
+  "target": "OmniVector Landing Pages",
+  "results": [
+    {
+      "name": "1. Without Skill (Raw AI)",
+      "file": "/Users/mubarak/Downloads/personal/skill/live-test/landing-pages/landing-without-skill.html",
+      "filePath": "/Users/mubarak/Downloads/personal/skill/live-test/landing-pages/landing-without-skill.html",
+      "score": 61,
+      "grade": "C",
+      "violations": [
+        {
+          "id": "COL-004",
+          "name": "Known AI-slop hex value",
+          "category": "color",
+          "severity": "critical",
+          "deduction": 8,
+          "lines": [
+            19,
+            49,
+            110,
+            156
+          ],
+          "message": "Known AI-generated hex color — replace with intentional palette",
+          "evidence": "#8b5cf6, #6366f1, #a855f7, #7c3aed, #4f46e5"
+        },
+        {
+          "id": "COL-005",
+          "name": "Gradient with AI purple/indigo hex",
+          "category": "color",
+          "severity": "critical",
+          "deduction": 6,
+          "lines": [
+            19
+          ],
+          "message": "linear-gradient contains AI-slop hex — use brand gradient tokens",
+          "evidence": "linear-gradient + AI hex"
+        },
+        {
+          "id": "MOT-001",
+          "name": "transition-all on UI element",
+          "category": "motion",
+          "severity": "critical",
+          "deduction": 5,
+          "lines": [
+            45
+          ],
+          "message": "transition-all causes unnecessary layout thrash — transition specific properties",
+          "evidence": "transition-all"
+        },
+        {
+          "id": "ACC-002",
+          "name": "hover: without focus-visible:",
+          "category": "accessibility",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            57,
+            103
+          ],
+          "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+          "evidence": ":hover without :focus-visible / :focus"
+        },
+        {
+          "id": "COL-003",
+          "name": "Pure black-on-white / white-on-black",
+          "category": "color",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            12,
+            13,
+            22,
+            48,
+            96,
+            111,
+            123
+          ],
+          "message": "Pure #000/#fff pair detected — add surface tokens for depth",
+          "evidence": "#000000 + #ffffff co-occurring"
+        },
+        {
+          "id": "LAY-003",
+          "name": "Flex/grid text child missing min-w-0",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            155,
+            197
+          ],
+          "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+          "evidence": "flex/grid without overflow protection"
+        },
+        {
+          "id": "LAY-004",
+          "name": "100vh without 100dvh fallback",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            8,
+            14
+          ],
+          "message": "h-screen / 100vh used without 100dvh — broken on mobile Safari",
+          "evidence": "100vh without 100dvh"
+        },
+        {
+          "id": "MOT-002",
+          "name": "ease-in on entering element",
+          "category": "motion",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            45,
+            55,
+            101
+          ],
+          "message": "ease-in feels sluggish for enter transitions — use ease-out or ease-in-out",
+          "evidence": "ease-in (not ease-in-out)"
+        },
+        {
+          "id": "MOT-004",
+          "name": "Missing prefers-reduced-motion",
+          "category": "motion",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            45,
+            55,
+            101
+          ],
+          "message": "Animations present without prefers-reduced-motion — accessibility risk",
+          "evidence": "transition / animate-* without motion-reduce"
+        },
+        {
+          "id": "TYP-001",
+          "name": "Unconfigured default font-sans",
+          "category": "typography",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            8
+          ],
+          "message": "font-sans used without a custom --font- variable — configure your font stack",
+          "evidence": "font-sans without --font-*"
+        },
+        {
+          "id": "TYP-004",
+          "name": "Long heading missing text-balance",
+          "category": "typography",
+          "severity": "info",
+          "deduction": 1,
+          "lines": [
+            165,
+            196,
+            221
+          ],
+          "message": "Heading could use text-balance for even line wrapping",
+          "evidence": "h1/h2 or text-3xl+ without text-balance"
+        }
+      ],
+      "categories": {
+        "color": [
+          {
+            "id": "COL-004",
+            "name": "Known AI-slop hex value",
+            "category": "color",
+            "severity": "critical",
+            "deduction": 8,
+            "lines": [
+              19,
+              49,
+              110,
+              156
+            ],
+            "message": "Known AI-generated hex color — replace with intentional palette",
+            "evidence": "#8b5cf6, #6366f1, #a855f7, #7c3aed, #4f46e5"
+          },
+          {
+            "id": "COL-005",
+            "name": "Gradient with AI purple/indigo hex",
+            "category": "color",
+            "severity": "critical",
+            "deduction": 6,
+            "lines": [
+              19
+            ],
+            "message": "linear-gradient contains AI-slop hex — use brand gradient tokens",
+            "evidence": "linear-gradient + AI hex"
+          },
+          {
+            "id": "COL-003",
+            "name": "Pure black-on-white / white-on-black",
+            "category": "color",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              12,
+              13,
+              22,
+              48,
+              96,
+              111,
+              123
+            ],
+            "message": "Pure #000/#fff pair detected — add surface tokens for depth",
+            "evidence": "#000000 + #ffffff co-occurring"
+          }
+        ],
+        "typography": [
+          {
+            "id": "TYP-001",
+            "name": "Unconfigured default font-sans",
+            "category": "typography",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              8
+            ],
+            "message": "font-sans used without a custom --font- variable — configure your font stack",
+            "evidence": "font-sans without --font-*"
+          },
+          {
+            "id": "TYP-004",
+            "name": "Long heading missing text-balance",
+            "category": "typography",
+            "severity": "info",
+            "deduction": 1,
+            "lines": [
+              165,
+              196,
+              221
+            ],
+            "message": "Heading could use text-balance for even line wrapping",
+            "evidence": "h1/h2 or text-3xl+ without text-balance"
+          }
+        ],
+        "layout": [
+          {
+            "id": "LAY-003",
+            "name": "Flex/grid text child missing min-w-0",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              155,
+              197
+            ],
+            "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+            "evidence": "flex/grid without overflow protection"
+          },
+          {
+            "id": "LAY-004",
+            "name": "100vh without 100dvh fallback",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              8,
+              14
+            ],
+            "message": "h-screen / 100vh used without 100dvh — broken on mobile Safari",
+            "evidence": "100vh without 100dvh"
+          }
+        ],
+        "motion": [
+          {
+            "id": "MOT-001",
+            "name": "transition-all on UI element",
+            "category": "motion",
+            "severity": "critical",
+            "deduction": 5,
+            "lines": [
+              45
+            ],
+            "message": "transition-all causes unnecessary layout thrash — transition specific properties",
+            "evidence": "transition-all"
+          },
+          {
+            "id": "MOT-002",
+            "name": "ease-in on entering element",
+            "category": "motion",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              45,
+              55,
+              101
+            ],
+            "message": "ease-in feels sluggish for enter transitions — use ease-out or ease-in-out",
+            "evidence": "ease-in (not ease-in-out)"
+          },
+          {
+            "id": "MOT-004",
+            "name": "Missing prefers-reduced-motion",
+            "category": "motion",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              45,
+              55,
+              101
+            ],
+            "message": "Animations present without prefers-reduced-motion — accessibility risk",
+            "evidence": "transition / animate-* without motion-reduce"
+          }
+        ],
+        "state": [],
+        "accessibility": [
+          {
+            "id": "ACC-002",
+            "name": "hover: without focus-visible:",
+            "category": "accessibility",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              57,
+              103
+            ],
+            "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+            "evidence": ":hover without :focus-visible / :focus"
+          }
+        ]
+      }
+    },
+    {
+      "name": "2. With Impeccable Skill",
+      "file": "/Users/mubarak/Downloads/personal/skill/live-test/landing-pages/landing-with-impeccable.html",
+      "filePath": "/Users/mubarak/Downloads/personal/skill/live-test/landing-pages/landing-with-impeccable.html",
+      "score": 94,
+      "grade": "A",
+      "violations": [
+        {
+          "id": "ACC-002",
+          "name": "hover: without focus-visible:",
+          "category": "accessibility",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            72,
+            113
+          ],
+          "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+          "evidence": ":hover without :focus-visible / :focus"
+        },
+        {
+          "id": "LAY-003",
+          "name": "Flex/grid text child missing min-w-0",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            189
+          ],
+          "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+          "evidence": "flex/grid without overflow protection"
+        },
+        {
+          "id": "TYP-004",
+          "name": "Long heading missing text-balance",
+          "category": "typography",
+          "severity": "info",
+          "deduction": 1,
+          "lines": [
+            159,
+            188,
+            208
+          ],
+          "message": "Heading could use text-balance for even line wrapping",
+          "evidence": "h1/h2 or text-3xl+ without text-balance"
+        }
+      ],
+      "categories": {
+        "color": [],
+        "typography": [
+          {
+            "id": "TYP-004",
+            "name": "Long heading missing text-balance",
+            "category": "typography",
+            "severity": "info",
+            "deduction": 1,
+            "lines": [
+              159,
+              188,
+              208
+            ],
+            "message": "Heading could use text-balance for even line wrapping",
+            "evidence": "h1/h2 or text-3xl+ without text-balance"
+          }
+        ],
+        "layout": [
+          {
+            "id": "LAY-003",
+            "name": "Flex/grid text child missing min-w-0",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              189
+            ],
+            "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+            "evidence": "flex/grid without overflow protection"
+          }
+        ],
+        "motion": [],
+        "state": [],
+        "accessibility": [
+          {
+            "id": "ACC-002",
+            "name": "hover: without focus-visible:",
+            "category": "accessibility",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              72,
+              113
+            ],
+            "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+            "evidence": ":hover without :focus-visible / :focus"
+          }
+        ]
+      }
+    },
+    {
+      "name": "3. With Vanguard UI (Ours)",
+      "file": "/Users/mubarak/Downloads/personal/skill/live-test/landing-pages/landing-with-vanguard-ui.html",
+      "filePath": "/Users/mubarak/Downloads/personal/skill/live-test/landing-pages/landing-with-vanguard-ui.html",
+      "score": 100,
+      "grade": "S",
+      "violations": [],
+      "categories": {
+        "color": [],
+        "typography": [],
+        "layout": [],
+        "motion": [],
+        "state": [],
+        "accessibility": []
+      }
+    }
+  ]
+}

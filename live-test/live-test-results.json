@@ -1,0 +1,729 @@
+{
+  "timestamp": "2026-11-01T16:08:29.536Z",
+  "targetComponent": "AgentFleetDashboard",
+  "results": [
+    {
+      "label": "1. Without Skill (Raw AI)",
+      "file": "/Users/mubarak/Downloads/personal/skill/live-test/page-without-skill.tsx",
+      "filePath": "/Users/mubarak/Downloads/personal/skill/live-test/page-without-skill.tsx",
+      "score": 37,
+      "grade": "F",
+      "violations": [
+        {
+          "id": "COL-001",
+          "name": "AI purple/indigo gradient pattern",
+          "category": "color",
+          "severity": "critical",
+          "deduction": 8,
+          "lines": [
+            14
+          ],
+          "message": "AI purple/indigo gradient detected — replace with brand palette",
+          "evidence": "from-/via- purple|indigo|violet"
+        },
+        {
+          "id": "COL-002",
+          "name": "Hardcoded hex in Tailwind arbitrary value",
+          "category": "color",
+          "severity": "critical",
+          "deduction": 5,
+          "lines": [
+            12,
+            24,
+            33,
+            41,
+            49,
+            64,
+            81
+          ],
+          "message": "Hardcoded hex in arbitrary Tailwind value — use a design token / CSS variable",
+          "evidence": "bg-[#...] / text-[#...] etc."
+        },
+        {
+          "id": "COL-004",
+          "name": "Known AI-slop hex value",
+          "category": "color",
+          "severity": "critical",
+          "deduction": 8,
+          "lines": [
+            24,
+            33,
+            41,
+            49,
+            64,
+            81
+          ],
+          "message": "Known AI-generated hex color — replace with intentional palette",
+          "evidence": "#8b5cf6, #6366f1, #a855f7, #7c3aed, #4f46e5"
+        },
+        {
+          "id": "LAY-001",
+          "name": "Cards-inside-cards",
+          "category": "layout",
+          "severity": "critical",
+          "deduction": 6,
+          "lines": [
+            23,
+            32,
+            40,
+            48,
+            58,
+            76
+          ],
+          "message": "Nested card patterns detected (rounded + border/shadow + padding) — flatten the hierarchy",
+          "evidence": "Multiple elements with rounded + border/shadow + p-*"
+        },
+        {
+          "id": "MOT-001",
+          "name": "transition-all on UI element",
+          "category": "motion",
+          "severity": "critical",
+          "deduction": 5,
+          "lines": [
+            64,
+            76
+          ],
+          "message": "transition-all causes unnecessary layout thrash — transition specific properties",
+          "evidence": "transition-all"
+        },
+        {
+          "id": "ACC-002",
+          "name": "hover: without focus-visible:",
+          "category": "accessibility",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            64,
+            76
+          ],
+          "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+          "evidence": "hover: without focus-visible: / focus:"
+        },
+        {
+          "id": "COL-003",
+          "name": "Pure black-on-white / white-on-black",
+          "category": "color",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            12
+          ],
+          "message": "Pure #000/#fff pair detected — add surface tokens for depth",
+          "evidence": "#000000 + #ffffff co-occurring"
+        },
+        {
+          "id": "LAY-003",
+          "name": "Flex/grid text child missing min-w-0",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            22,
+            23,
+            24,
+            32,
+            33,
+            40,
+            41,
+            48,
+            49,
+            59,
+            79
+          ],
+          "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+          "evidence": "flex/grid without overflow protection"
+        },
+        {
+          "id": "LAY-004",
+          "name": "100vh without 100dvh fallback",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            12
+          ],
+          "message": "h-screen / 100vh used without 100dvh — broken on mobile Safari",
+          "evidence": "100vh without 100dvh"
+        },
+        {
+          "id": "LAY-005",
+          "name": "Fixed-width without responsive variant",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            12
+          ],
+          "message": "Hardcoded pixel width without responsive breakpoints — will break on small screens",
+          "evidence": "w-[Npx] without sm:/md:/lg: variants"
+        },
+        {
+          "id": "MOT-002",
+          "name": "ease-in on entering element",
+          "category": "motion",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            64,
+            76
+          ],
+          "message": "ease-in feels sluggish for enter transitions — use ease-out or ease-in-out",
+          "evidence": "ease-in (not ease-in-out)"
+        },
+        {
+          "id": "MOT-003",
+          "name": "Slow duration on interactive control",
+          "category": "motion",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            64,
+            76
+          ],
+          "message": "Duration >300ms on interactive elements feels laggy — keep under 300ms",
+          "evidence": "duration-500 / duration-700 / etc."
+        },
+        {
+          "id": "MOT-004",
+          "name": "Missing prefers-reduced-motion",
+          "category": "motion",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            64,
+            76
+          ],
+          "message": "Animations present without prefers-reduced-motion — accessibility risk",
+          "evidence": "transition / animate-* without motion-reduce"
+        },
+        {
+          "id": "STA-001",
+          "name": ".map() without empty-array fallback",
+          "category": "state",
+          "severity": "warning",
+          "deduction": 4,
+          "lines": [
+            72
+          ],
+          "message": ".map() called without checking for empty array — renders nothing silently",
+          "evidence": ".map( without length / ?? / || guard"
+        },
+        {
+          "id": "TYP-001",
+          "name": "Unconfigured default font-sans",
+          "category": "typography",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            12
+          ],
+          "message": "font-sans used without a custom --font- variable — configure your font stack",
+          "evidence": "font-sans without --font-*"
+        },
+        {
+          "id": "TYP-003",
+          "name": "Large heading missing tracking-tight",
+          "category": "typography",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            15
+          ],
+          "message": "Display-size text without tracking-tight — letter spacing will look loose",
+          "evidence": "text-4xl+ without tracking-tight"
+        },
+        {
+          "id": "TYP-004",
+          "name": "Long heading missing text-balance",
+          "category": "typography",
+          "severity": "info",
+          "deduction": 1,
+          "lines": [
+            15,
+            60
+          ],
+          "message": "Heading could use text-balance for even line wrapping",
+          "evidence": "h1/h2 or text-3xl+ without text-balance"
+        }
+      ],
+      "categories": {
+        "color": [
+          {
+            "id": "COL-001",
+            "name": "AI purple/indigo gradient pattern",
+            "category": "color",
+            "severity": "critical",
+            "deduction": 8,
+            "lines": [
+              14
+            ],
+            "message": "AI purple/indigo gradient detected — replace with brand palette",
+            "evidence": "from-/via- purple|indigo|violet"
+          },
+          {
+            "id": "COL-002",
+            "name": "Hardcoded hex in Tailwind arbitrary value",
+            "category": "color",
+            "severity": "critical",
+            "deduction": 5,
+            "lines": [
+              12,
+              24,
+              33,
+              41,
+              49,
+              64,
+              81
+            ],
+            "message": "Hardcoded hex in arbitrary Tailwind value — use a design token / CSS variable",
+            "evidence": "bg-[#...] / text-[#...] etc."
+          },
+          {
+            "id": "COL-004",
+            "name": "Known AI-slop hex value",
+            "category": "color",
+            "severity": "critical",
+            "deduction": 8,
+            "lines": [
+              24,
+              33,
+              41,
+              49,
+              64,
+              81
+            ],
+            "message": "Known AI-generated hex color — replace with intentional palette",
+            "evidence": "#8b5cf6, #6366f1, #a855f7, #7c3aed, #4f46e5"
+          },
+          {
+            "id": "COL-003",
+            "name": "Pure black-on-white / white-on-black",
+            "category": "color",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              12
+            ],
+            "message": "Pure #000/#fff pair detected — add surface tokens for depth",
+            "evidence": "#000000 + #ffffff co-occurring"
+          }
+        ],
+        "typography": [
+          {
+            "id": "TYP-001",
+            "name": "Unconfigured default font-sans",
+            "category": "typography",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              12
+            ],
+            "message": "font-sans used without a custom --font- variable — configure your font stack",
+            "evidence": "font-sans without --font-*"
+          },
+          {
+            "id": "TYP-003",
+            "name": "Large heading missing tracking-tight",
+            "category": "typography",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              15
+            ],
+            "message": "Display-size text without tracking-tight — letter spacing will look loose",
+            "evidence": "text-4xl+ without tracking-tight"
+          },
+          {
+            "id": "TYP-004",
+            "name": "Long heading missing text-balance",
+            "category": "typography",
+            "severity": "info",
+            "deduction": 1,
+            "lines": [
+              15,
+              60
+            ],
+            "message": "Heading could use text-balance for even line wrapping",
+            "evidence": "h1/h2 or text-3xl+ without text-balance"
+          }
+        ],
+        "layout": [
+          {
+            "id": "LAY-001",
+            "name": "Cards-inside-cards",
+            "category": "layout",
+            "severity": "critical",
+            "deduction": 6,
+            "lines": [
+              23,
+              32,
+              40,
+              48,
+              58,
+              76
+            ],
+            "message": "Nested card patterns detected (rounded + border/shadow + padding) — flatten the hierarchy",
+            "evidence": "Multiple elements with rounded + border/shadow + p-*"
+          },
+          {
+            "id": "LAY-003",
+            "name": "Flex/grid text child missing min-w-0",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              22,
+              23,
+              24,
+              32,
+              33,
+              40,
+              41,
+              48,
+              49,
+              59,
+              79
+            ],
+            "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+            "evidence": "flex/grid without overflow protection"
+          },
+          {
+            "id": "LAY-004",
+            "name": "100vh without 100dvh fallback",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              12
+            ],
+            "message": "h-screen / 100vh used without 100dvh — broken on mobile Safari",
+            "evidence": "100vh without 100dvh"
+          },
+          {
+            "id": "LAY-005",
+            "name": "Fixed-width without responsive variant",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              12
+            ],
+            "message": "Hardcoded pixel width without responsive breakpoints — will break on small screens",
+            "evidence": "w-[Npx] without sm:/md:/lg: variants"
+          }
+        ],
+        "motion": [
+          {
+            "id": "MOT-001",
+            "name": "transition-all on UI element",
+            "category": "motion",
+            "severity": "critical",
+            "deduction": 5,
+            "lines": [
+              64,
+              76
+            ],
+            "message": "transition-all causes unnecessary layout thrash — transition specific properties",
+            "evidence": "transition-all"
+          },
+          {
+            "id": "MOT-002",
+            "name": "ease-in on entering element",
+            "category": "motion",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              64,
+              76
+            ],
+            "message": "ease-in feels sluggish for enter transitions — use ease-out or ease-in-out",
+            "evidence": "ease-in (not ease-in-out)"
+          },
+          {
+            "id": "MOT-003",
+            "name": "Slow duration on interactive control",
+            "category": "motion",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              64,
+              76
+            ],
+            "message": "Duration >300ms on interactive elements feels laggy — keep under 300ms",
+            "evidence": "duration-500 / duration-700 / etc."
+          },
+          {
+            "id": "MOT-004",
+            "name": "Missing prefers-reduced-motion",
+            "category": "motion",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              64,
+              76
+            ],
+            "message": "Animations present without prefers-reduced-motion — accessibility risk",
+            "evidence": "transition / animate-* without motion-reduce"
+          }
+        ],
+        "state": [
+          {
+            "id": "STA-001",
+            "name": ".map() without empty-array fallback",
+            "category": "state",
+            "severity": "warning",
+            "deduction": 4,
+            "lines": [
+              72
+            ],
+            "message": ".map() called without checking for empty array — renders nothing silently",
+            "evidence": ".map( without length / ?? / || guard"
+          }
+        ],
+        "accessibility": [
+          {
+            "id": "ACC-002",
+            "name": "hover: without focus-visible:",
+            "category": "accessibility",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              64,
+              76
+            ],
+            "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+            "evidence": "hover: without focus-visible: / focus:"
+          }
+        ]
+      }
+    },
+    {
+      "label": "2. With Impeccable Skill",
+      "file": "/Users/mubarak/Downloads/personal/skill/live-test/page-with-impeccable.tsx",
+      "filePath": "/Users/mubarak/Downloads/personal/skill/live-test/page-with-impeccable.tsx",
+      "score": 76,
+      "grade": "B",
+      "violations": [
+        {
+          "id": "LAY-001",
+          "name": "Cards-inside-cards",
+          "category": "layout",
+          "severity": "critical",
+          "deduction": 6,
+          "lines": [
+            13,
+            37,
+            42,
+            46,
+            50
+          ],
+          "message": "Nested card patterns detected (rounded + border/shadow + padding) — flatten the hierarchy",
+          "evidence": "Multiple elements with rounded + border/shadow + p-*"
+        },
+        {
+          "id": "MOT-001",
+          "name": "transition-all on UI element",
+          "category": "motion",
+          "severity": "critical",
+          "deduction": 5,
+          "lines": [
+            28,
+            29,
+            64,
+            65
+          ],
+          "message": "transition-all causes unnecessary layout thrash — transition specific properties",
+          "evidence": "transition-all"
+        },
+        {
+          "id": "ACC-002",
+          "name": "hover: without focus-visible:",
+          "category": "accessibility",
+          "severity": "warning",
+          "deduction": 2,
+          "lines": [
+            29,
+            65
+          ],
+          "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+          "evidence": "hover: without focus-visible: / focus:"
+        },
+        {
+          "id": "LAY-003",
+          "name": "Flex/grid text child missing min-w-0",
+          "category": "layout",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            15,
+            36,
+            70
+          ],
+          "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+          "evidence": "flex/grid without overflow protection"
+        },
+        {
+          "id": "STA-001",
+          "name": ".map() without empty-array fallback",
+          "category": "state",
+          "severity": "warning",
+          "deduction": 4,
+          "lines": [
+            56,
+            59
+          ],
+          "message": ".map() called without checking for empty array — renders nothing silently",
+          "evidence": ".map( without length / ?? / || guard"
+        },
+        {
+          "id": "TYP-001",
+          "name": "Unconfigured default font-sans",
+          "category": "typography",
+          "severity": "warning",
+          "deduction": 3,
+          "lines": [
+            13
+          ],
+          "message": "font-sans used without a custom --font- variable — configure your font stack",
+          "evidence": "font-sans without --font-*"
+        },
+        {
+          "id": "TYP-004",
+          "name": "Long heading missing text-balance",
+          "category": "typography",
+          "severity": "info",
+          "deduction": 1,
+          "lines": [
+            18
+          ],
+          "message": "Heading could use text-balance for even line wrapping",
+          "evidence": "h1/h2 or text-3xl+ without text-balance"
+        }
+      ],
+      "categories": {
+        "color": [],
+        "typography": [
+          {
+            "id": "TYP-001",
+            "name": "Unconfigured default font-sans",
+            "category": "typography",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              13
+            ],
+            "message": "font-sans used without a custom --font- variable — configure your font stack",
+            "evidence": "font-sans without --font-*"
+          },
+          {
+            "id": "TYP-004",
+            "name": "Long heading missing text-balance",
+            "category": "typography",
+            "severity": "info",
+            "deduction": 1,
+            "lines": [
+              18
+            ],
+            "message": "Heading could use text-balance for even line wrapping",
+            "evidence": "h1/h2 or text-3xl+ without text-balance"
+          }
+        ],
+        "layout": [
+          {
+            "id": "LAY-001",
+            "name": "Cards-inside-cards",
+            "category": "layout",
+            "severity": "critical",
+            "deduction": 6,
+            "lines": [
+              13,
+              37,
+              42,
+              46,
+              50
+            ],
+            "message": "Nested card patterns detected (rounded + border/shadow + padding) — flatten the hierarchy",
+            "evidence": "Multiple elements with rounded + border/shadow + p-*"
+          },
+          {
+            "id": "LAY-003",
+            "name": "Flex/grid text child missing min-w-0",
+            "category": "layout",
+            "severity": "warning",
+            "deduction": 3,
+            "lines": [
+              15,
+              36,
+              70
+            ],
+            "message": "Text inside flex/grid without min-w-0 or truncate — text may overflow",
+            "evidence": "flex/grid without overflow protection"
+          }
+        ],
+        "motion": [
+          {
+            "id": "MOT-001",
+            "name": "transition-all on UI element",
+            "category": "motion",
+            "severity": "critical",
+            "deduction": 5,
+            "lines": [
+              28,
+              29,
+              64,
+              65
+            ],
+            "message": "transition-all causes unnecessary layout thrash — transition specific properties",
+            "evidence": "transition-all"
+          }
+        ],
+        "state": [
+          {
+            "id": "STA-001",
+            "name": ".map() without empty-array fallback",
+            "category": "state",
+            "severity": "warning",
+            "deduction": 4,
+            "lines": [
+              56,
+              59
+            ],
+            "message": ".map() called without checking for empty array — renders nothing silently",
+            "evidence": ".map( without length / ?? / || guard"
+          }
+        ],
+        "accessibility": [
+          {
+            "id": "ACC-002",
+            "name": "hover: without focus-visible:",
+            "category": "accessibility",
+            "severity": "warning",
+            "deduction": 2,
+            "lines": [
+              29,
+              65
+            ],
+            "message": "Hover styles without focus-visible — keyboard users cannot see active state",
+            "evidence": "hover: without focus-visible: / focus:"
+          }
+        ]
+      }
+    },
+    {
+      "label": "3. With Vanguard UI (Ours)",
+      "file": "/Users/mubarak/Downloads/personal/skill/live-test/page-with-vanguard-ui.tsx",
+      "filePath": "/Users/mubarak/Downloads/personal/skill/live-test/page-with-vanguard-ui.tsx",
+      "score": 100,
+      "grade": "S",
+      "violations": [],
+      "categories": {
+        "color": [],
+        "typography": [],
+        "layout": [],
+        "motion": [],
+        "state": [],
+        "accessibility": []
+      }
+    }
+  ]
+}
